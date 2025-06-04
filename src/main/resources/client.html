@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Netty WebSocket Test</title>
+    <meta http-equiv="Content-Security-Policy" content="connect-src 'self' ws://localhost:8080;">
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        #log { white-space: pre-wrap; background: #f0f0f0; padding: 10px; border: 1px solid #ccc; height: 200px; overflow-y: scroll; }
+    </style>
+</head>
+<body>
+<h2>WebSocket Test Client</h2>
+<button onclick="connect()">Connect</button>
+<button onclick="sendMessage()">Send Message</button>
+<div id="log"></div>
+
+<script>
+    let ws;
+
+    function log(message) {
+        const logDiv = document.getElementById('log');
+        logDiv.textContent += message + '\n';
+    }
+
+    function connect() {
+        ws = new WebSocket("ws://localhost:8080/ws");
+
+        ws.onopen = () => log("✅ Connected to WebSocket server");
+        ws.onmessage = (event) => log("📩 Received: " + event.data);
+        ws.onclose = () => log("❌ Connection closed");
+        ws.onerror = (error) => log("⚠️ Error: " + error);
+    }
+
+    function sendMessage() {
+        if (ws && ws.readyState === WebSocket.OPEN) {
+            ws.send("Hello from browser!");
+            log("📤 Sent: Hello from browser!");
+        } else {
+            log("⚠️ WebSocket is not connected.");
+        }
+    }
+</script>
+</body>
+</html>
