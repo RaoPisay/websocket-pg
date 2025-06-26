@@ -1,25 +1,20 @@
 package com.wt.pg.websocket.server;
 
 import com.caucho.hessian.io.HessianInput;
-import com.caucho.hessian.io.HessianOutput;
-import com.wt.pg.bo.ACK;
 import com.wt.pg.bo.Message;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.ByteBuf;
-import io.netty.buffer.Unpooled;
 import io.netty.channel.*;
-import io.netty.channel.nio.NioIoHandler;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.HttpServerCodec;
 import io.netty.handler.codec.http.websocketx.BinaryWebSocketFrame;
+import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.nio.channels.spi.SelectorProvider;
 
 public class WebSocketServer {
     public static void main(String[] args) {
@@ -41,7 +36,12 @@ public class WebSocketServer {
                 pipeline.addLast(new HttpObjectAggregator(65536));
 
                 pipeline.addLast(new WebSocketServerProtocolHandler("/ws"));
+                //pipeline.addLast(new WebSocketTextPayloadHandler());
                 pipeline.addLast(new WebSocketBinaryPayloadHandler());
+
+                //sending PING with 10sec delay
+                //Thread pingThread = new Thread(new Ping(ch));
+                //pingThread.start();
 
             }
         });
@@ -62,7 +62,6 @@ public class WebSocketServer {
         }
     }
 
-    //incoming from client
     static class WebSocketBinaryPayloadHandler extends SimpleChannelInboundHandler<BinaryWebSocketFrame> {
         @Override
         protected void channelRead0(ChannelHandlerContext ctx, BinaryWebSocketFrame payload) throws IOException {
@@ -82,16 +81,40 @@ public class WebSocketServer {
                 System.out.println("Able to rebuild Message(bo): " + message.getMessage());
 
                 //send ack to client
-                ByteArrayOutputStream bos = new ByteArrayOutputStream();
-                HessianOutput ho = new HessianOutput(bos);
-                try {
-                    ho.writeObject(new ACK(true));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                byte[] serialized = bos.toByteArray();
-                ctx.writeAndFlush(new BinaryWebSocketFrame(Unpooled.wrappedBuffer(serialized)));
+
             }
         }
     }
+
+    /*static class WebSocketTextPayloadHandler extends SimpleChannelInboundHandler<TextWebSocketFrame> {
+        @Override
+        protected void channelRead0(ChannelHandlerContext ctx, TextWebSocketFrame msg) {
+            String text = msg.text();
+            System.out.println("Received: " + text);
+            //ack
+            ctx.channel().writeAndFlush(new TextWebSocketFrame("0"));
+        }
+    }*/
+
+    /*static class Ping implements Runnable {
+
+        private final SocketChannel ch;
+
+        public Ping(SocketChannel ch) {
+            this.ch = ch;
+        }
+
+        @Override
+        public void run() {
+            while (true) {
+                System.out.println("Sending...ping");
+                ch.writeAndFlush(new TextWebSocketFrame("PING"));
+                try {
+                    Thread.sleep(10_000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
+    }*/
 }
