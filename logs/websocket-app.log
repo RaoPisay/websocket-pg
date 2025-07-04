@@ -1,0 +1,94 @@
+2025-07-04 10:05:49.689 [main] INFO  com.wt.pg.WebSocketApplication - Starting WebSocket Application in server mode with profile: dev
+2025-07-04 10:05:49.738 [main] INFO  com.wt.pg.config.WebSocketConfig - Loaded configuration for profile: dev
+2025-07-04 10:05:49.738 [main] INFO  com.wt.pg.WebSocketApplication - Starting WebSocket server...
+2025-07-04 10:05:49.779 [main] INFO  c.wt.pg.connection.ConnectionManager - ConnectionManager initialized with cleanup interval: 300s
+2025-07-04 10:05:49.780 [main] INFO  c.w.p.w.s.EnhancedWebSocketServer - Enhanced WebSocket server initialized: WebSocketConfig{profile='dev', serverHost='0.0.0.0', serverPort=8080, maxConnections=1000, securityEnabled=false, monitoringEnabled=true}
+2025-07-04 10:05:49.788 [main] INFO  c.w.p.w.s.EnhancedWebSocketServer - Starting WebSocket server on 0.0.0.0:8080/ws
+2025-07-04 10:05:49.879 [nioEventLoopGroup-2-1] INFO  i.n.handler.logging.LoggingHandler - [id: 0x5b7e89f7] REGISTERED
+2025-07-04 10:05:49.880 [nioEventLoopGroup-2-1] INFO  i.n.handler.logging.LoggingHandler - [id: 0x5b7e89f7] BIND: /0.0.0.0:8080
+2025-07-04 10:05:49.881 [main] INFO  c.w.p.w.s.EnhancedWebSocketServer - WebSocket server started successfully on 0.0.0.0:8080
+2025-07-04 10:05:49.881 [nioEventLoopGroup-2-1] INFO  i.n.handler.logging.LoggingHandler - [id: 0x5b7e89f7, L:/0.0.0.0:8080] ACTIVE
+2025-07-04 10:05:59.369 [Thread-0] INFO  com.wt.pg.WebSocketApplication - Shutdown signal received, stopping server...
+2025-07-04 10:05:59.369 [Thread-0] INFO  c.w.p.w.s.EnhancedWebSocketServer - Shutting down WebSocket server...
+2025-07-04 10:05:59.369 [Thread-0] INFO  c.wt.pg.connection.ConnectionManager - Closing all 0 connections
+2025-07-04 10:05:59.369 [Thread-0] INFO  c.wt.pg.connection.ConnectionManager - All connections closed and cleanup executor shutdown
+2025-07-04 10:05:59.370 [nioEventLoopGroup-2-1] INFO  i.n.handler.logging.LoggingHandler - [id: 0x5b7e89f7, L:/0.0.0.0:8080] CLOSE
+2025-07-04 10:05:59.370 [main] INFO  c.w.p.w.s.EnhancedWebSocketServer - Shutting down WebSocket server...
+2025-07-04 10:05:59.371 [main] INFO  c.wt.pg.connection.ConnectionManager - Closing all 0 connections
+2025-07-04 10:05:59.371 [nioEventLoopGroup-2-1] INFO  i.n.handler.logging.LoggingHandler - [id: 0x5b7e89f7, L:/0.0.0.0:8080] INACTIVE
+2025-07-04 10:05:59.371 [main] INFO  c.wt.pg.connection.ConnectionManager - All connections closed and cleanup executor shutdown
+2025-07-04 10:05:59.371 [nioEventLoopGroup-2-1] INFO  i.n.handler.logging.LoggingHandler - [id: 0x5b7e89f7, L:/0.0.0.0:8080] UNREGISTERED
+2025-07-04 10:06:01.376 [Thread-0] INFO  c.w.p.w.s.EnhancedWebSocketServer - WebSocket server shutdown completed
+2025-07-04 10:06:01.376 [main] INFO  c.w.p.w.s.EnhancedWebSocketServer - WebSocket server shutdown completed
+2025-07-04 10:06:07.082 [main] INFO  com.wt.pg.WebSocketApplication - Starting WebSocket Application in demo mode with profile: dev
+2025-07-04 10:06:07.130 [main] INFO  com.wt.pg.config.WebSocketConfig - Loaded configuration for profile: dev
+2025-07-04 10:06:07.130 [main] INFO  com.wt.pg.WebSocketApplication - Starting WebSocket demo (server + client)...
+2025-07-04 10:06:07.173 [main] INFO  c.wt.pg.connection.ConnectionManager - ConnectionManager initialized with cleanup interval: 300s
+2025-07-04 10:06:07.174 [main] INFO  c.w.p.w.s.EnhancedWebSocketServer - Enhanced WebSocket server initialized: WebSocketConfig{profile='dev', serverHost='0.0.0.0', serverPort=8080, maxConnections=1000, securityEnabled=false, monitoringEnabled=true}
+2025-07-04 10:06:07.182 [Thread-0] INFO  c.w.p.w.s.EnhancedWebSocketServer - Starting WebSocket server on 0.0.0.0:8080/ws
+2025-07-04 10:06:07.264 [nioEventLoopGroup-2-1] INFO  i.n.handler.logging.LoggingHandler - [id: 0xa99bd472] REGISTERED
+2025-07-04 10:06:07.265 [nioEventLoopGroup-2-1] INFO  i.n.handler.logging.LoggingHandler - [id: 0xa99bd472] BIND: /0.0.0.0:8080
+2025-07-04 10:06:07.266 [Thread-0] INFO  c.w.p.w.s.EnhancedWebSocketServer - WebSocket server started successfully on 0.0.0.0:8080
+2025-07-04 10:06:07.267 [nioEventLoopGroup-2-1] INFO  i.n.handler.logging.LoggingHandler - [id: 0xa99bd472, L:/0.0.0.0:8080] ACTIVE
+2025-07-04 10:06:09.187 [main] INFO  c.w.p.w.c.EnhancedWebSocketClient - Enhanced WebSocket client initialized for: ws://0.0.0.0:8080/ws
+2025-07-04 10:06:09.189 [main] INFO  c.w.p.w.c.EnhancedWebSocketClient - Connecting to WebSocket server: ws://0.0.0.0:8080/ws
+2025-07-04 10:06:09.232 [nioEventLoopGroup-2-1] INFO  i.n.handler.logging.LoggingHandler - [id: 0xa99bd472, L:/0.0.0.0:8080] READ: [id: 0x0d1210f0, L:/127.0.0.1:8080 - R:/127.0.0.1:43624]
+2025-07-04 10:06:09.234 [nioEventLoopGroup-2-1] INFO  i.n.handler.logging.LoggingHandler - [id: 0xa99bd472, L:/0.0.0.0:8080] READ COMPLETE
+2025-07-04 10:06:09.251 [nioEventLoopGroup-3-2] INFO  c.wt.pg.connection.ConnectionManager - Connection registered: 425cbc5b-9223-4ec1-a0a1-d876c4212e89 from /127.0.0.1:43624 (Total: 1)
+2025-07-04 10:06:09.251 [nioEventLoopGroup-3-2] INFO  c.w.p.w.s.EnhancedWebSocketServer - WebSocket connection established: 425cbc5b-9223-4ec1-a0a1-d876c4212e89 from /127.0.0.1:43624
+2025-07-04 10:06:09.267 [nioEventLoopGroup-4-1] INFO  c.w.p.w.c.EnhancedWebSocketClient - WebSocket handshake completed successfully
+2025-07-04 10:06:09.268 [nioEventLoopGroup-4-1] INFO  com.wt.pg.WebSocketApplication - Demo client connected!
+2025-07-04 10:06:09.270 [ForkJoinPool.commonPool-worker-1] INFO  com.wt.pg.WebSocketApplication - Starting demo scenario...
+2025-07-04 10:06:09.285 [ForkJoinPool.commonPool-worker-1] ERROR com.wt.pg.WebSocketApplication - Demo scenario failed
+java.util.concurrent.ExecutionException: java.lang.RuntimeException: Unable to make field private final long java.time.Instant.seconds accessible: module java.base does not "opens java.time" to unnamed module @69eee410
+ field: com.wt.pg.bo.WebSocketMessage.timestamp
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2073)
+	at com.wt.pg.WebSocketApplication.lambda$runDemoScenario$15(WebSocketApplication.java:264)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+Caused by: java.lang.RuntimeException: Unable to make field private final long java.time.Instant.seconds accessible: module java.base does not "opens java.time" to unnamed module @69eee410
+ field: com.wt.pg.bo.WebSocketMessage.timestamp
+	at com.caucho.hessian.io.UnsafeSerializer$ObjectFieldSerializer.serialize(UnsafeSerializer.java:303)
+	at com.caucho.hessian.io.UnsafeSerializer.writeObject10(UnsafeSerializer.java:192)
+	at com.caucho.hessian.io.UnsafeSerializer.writeObject(UnsafeSerializer.java:180)
+	at com.caucho.hessian.io.HessianOutput.writeObject(HessianOutput.java:324)
+	at com.wt.pg.websocket.client.EnhancedWebSocketClient.serializeMessage(EnhancedWebSocketClient.java:418)
+	at com.wt.pg.websocket.client.EnhancedWebSocketClient.sendMessage(EnhancedWebSocketClient.java:191)
+	at com.wt.pg.websocket.client.EnhancedWebSocketClient.sendText(EnhancedWebSocketClient.java:258)
+	... 8 common frames omitted
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private final long java.time.Instant.seconds accessible: module java.base does not "opens java.time" to unnamed module @69eee410
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:354)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:297)
+	at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:178)
+	at java.base/java.lang.reflect.Field.setAccessible(Field.java:172)
+	at com.caucho.hessian.io.JavaSerializer.introspect(JavaSerializer.java:130)
+	at com.caucho.hessian.io.JavaSerializer.<init>(JavaSerializer.java:82)
+	at com.caucho.hessian.io.JavaSerializer.create(JavaSerializer.java:102)
+	at com.caucho.hessian.io.SerializerFactory.getDefaultSerializer(SerializerFactory.java:395)
+	at com.caucho.hessian.io.SerializerFactory.loadSerializer(SerializerFactory.java:325)
+	at com.caucho.hessian.io.SerializerFactory.getSerializer(SerializerFactory.java:267)
+	at com.caucho.hessian.io.HessianOutput.writeObject(HessianOutput.java:322)
+	at com.caucho.hessian.io.UnsafeSerializer$ObjectFieldSerializer.serialize(UnsafeSerializer.java:299)
+	... 14 common frames omitted
+2025-07-04 10:06:09.287 [main] INFO  com.wt.pg.WebSocketApplication - Demo completed successfully!
+2025-07-04 10:06:09.287 [main] INFO  c.w.p.w.c.EnhancedWebSocketClient - Disconnecting from WebSocket server
+2025-07-04 10:06:09.289 [nioEventLoopGroup-3-2] INFO  c.wt.pg.connection.ConnectionManager - Connection unregistered: 425cbc5b-9223-4ec1-a0a1-d876c4212e89 (Duration: 0s, Total: 0)
+2025-07-04 10:06:09.289 [main] INFO  c.w.p.w.s.EnhancedWebSocketServer - Shutting down WebSocket server...
+2025-07-04 10:06:09.289 [nioEventLoopGroup-3-2] INFO  c.w.p.w.s.EnhancedWebSocketServer - WebSocket connection closed: 425cbc5b-9223-4ec1-a0a1-d876c4212e89
+2025-07-04 10:06:09.289 [main] INFO  c.wt.pg.connection.ConnectionManager - Closing all 0 connections
+2025-07-04 10:06:09.289 [main] INFO  c.wt.pg.connection.ConnectionManager - All connections closed and cleanup executor shutdown
+2025-07-04 10:06:09.290 [nioEventLoopGroup-2-1] INFO  i.n.handler.logging.LoggingHandler - [id: 0xa99bd472, L:/0.0.0.0:8080] CLOSE
+2025-07-04 10:06:09.290 [nioEventLoopGroup-4-1] INFO  c.w.p.w.c.EnhancedWebSocketClient - WebSocket client channel inactive
+2025-07-04 10:06:09.290 [Thread-0] INFO  c.w.p.w.s.EnhancedWebSocketServer - Shutting down WebSocket server...
+2025-07-04 10:06:09.290 [nioEventLoopGroup-2-1] INFO  i.n.handler.logging.LoggingHandler - [id: 0xa99bd472, L:/0.0.0.0:8080] INACTIVE
+2025-07-04 10:06:09.290 [Thread-0] INFO  c.wt.pg.connection.ConnectionManager - Closing all 0 connections
+2025-07-04 10:06:09.291 [nioEventLoopGroup-2-1] INFO  i.n.handler.logging.LoggingHandler - [id: 0xa99bd472, L:/0.0.0.0:8080] UNREGISTERED
+2025-07-04 10:06:09.291 [Thread-0] INFO  c.wt.pg.connection.ConnectionManager - All connections closed and cleanup executor shutdown
+2025-07-04 10:06:11.293 [main] INFO  c.w.p.w.s.EnhancedWebSocketServer - WebSocket server shutdown completed
+2025-07-04 10:06:11.293 [Thread-0] INFO  c.w.p.w.s.EnhancedWebSocketServer - WebSocket server shutdown completed
